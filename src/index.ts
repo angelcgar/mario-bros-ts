@@ -1,5 +1,6 @@
 import Phaser from 'phaser';
-import { CreateAnimetions } from './animations';
+
+import { AnimationCreator } from './animations';
 
 class Example extends Phaser.Scene {
   public objects: undefined;
@@ -48,7 +49,8 @@ class Example extends Phaser.Scene {
     this.cameras.main.setBounds(0, 0, 2000, Number(config.height));
     this.cameras.main.startFollow(this.mario);
 
-    CreateAnimetions(this);
+    const animCreator = new AnimationCreator(this);
+    animCreator.createAnimations();
 
     // biome-ignore lint/style/noNonNullAssertion: <explanation>
     this.keys = this.input.keyboard!.createCursorKeys();

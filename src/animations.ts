@@ -1,23 +1,34 @@
-export const CreateAnimetions = (game: unknown) => {
-  game.anims.create({
-    key: 'mario-walk',
-    frames: game.anims.generateFrameNumbers('mario', { start: 1, end: 3 }),
-    frameRate: 12,
-    repeat: -1,
-  });
+export class AnimationCreator {
+  private game: Phaser.Scene;
 
-  game.anims.create({
-    key: 'mario-idle',
-    frames: [{ key: 'mario', frame: 0 }],
-  });
+  constructor(game: Phaser.Scene) {
+    this.game = game;
+  }
 
-  game.anims.create({
-    key: 'mario-jump',
-    frames: [{ key: 'mario', frame: 5 }],
-  });
+  public createAnimations(): void {
+    this.game.anims.create({
+      key: 'mario-walk',
+      frames: this.game.anims.generateFrameNumbers('mario', {
+        start: 1,
+        end: 3,
+      }),
+      frameRate: 12,
+      repeat: -1,
+    });
 
-  game.anims.create({
-    key: 'mario-dead',
-    frames: [{ key: 'mario', frame: 4 }],
-  });
-};
+    this.game.anims.create({
+      key: 'mario-idle',
+      frames: [{ key: 'mario', frame: 0 }],
+    });
+
+    this.game.anims.create({
+      key: 'mario-jump',
+      frames: [{ key: 'mario', frame: 5 }],
+    });
+
+    this.game.anims.create({
+      key: 'mario-dead',
+      frames: [{ key: 'mario', frame: 4 }],
+    });
+  }
+}
