@@ -1,0 +1,21 @@
+{
+  "name": "mario-bros",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "build": "rsbuild build",
+    "check": "biome check --write",
+    "dev": "rsbuild dev --open",
+    "format": "biome format --write",
+    "preview": "rsbuild preview"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^1.8.3",
+    "@rsbuild/core": "^1.0.1",
+    "typescript": "^5.5.2"
+  },
+  "packageManager": "pnpm@9.5.0+sha512.140036830124618d624a2187b50d04289d5a087f326c9edfc0ccd733d76c4f52c3a313d4fc148794a2a9d81553016004e6742e8cf850670268a7387fc220c903",
+  "dependencies": {
+    "phaser": "v3.85.2"
+  }
+}
